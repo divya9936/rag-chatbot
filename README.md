@@ -4,6 +4,12 @@ Transform your PDFs into an intelligent knowledge base. Ask anything. Get instan
 
 ---
 
+## 🎯 Try the Demo
+
+[Live Demo on Streamlit](https://rag-powered-pdf-chatbot.streamlit.app/)
+
+---
+
 ## Features ✨
 
 • Upload and process PDF documents

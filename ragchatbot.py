@@ -45,7 +45,16 @@ if file is not None:
         google_api_key=GEMINI_API_KEY,
     )
 
-    vector_store = FAISS.from_texts(chunks, embeddings)
+    import traceback
+
+    try:
+        vector_store = FAISS.from_texts(chunks, embeddings)
+    except Exception as e:
+        st.error(f"**Error type:** {type(e).__name__}")
+        st.error(f"**Message:** {str(e)}")
+        st.error(f"**Cause:** {str(e.__cause__)}")
+        st.code(traceback.format_exc())
+        st.stop()
 
     user_question = st.text_input("Type your question here")
 

@@ -2,7 +2,11 @@ import os
 import pdfplumber
 import streamlit as st
 
-from env import GEMINI_API_KEY
+# from env import GEMINI_API_KEY
+try:
+    GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
+except FileNotFoundError:
+    from env import GEMINI_API_KEY
 from langchain_community.vectorstores import FAISS
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
